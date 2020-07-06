@@ -1,23 +1,13 @@
 <?php
-if (isset($_POST['sumbit'])){
-	$name=$_POST['name'];
-	$email=$_POST['email'];
-	$msg=$_POST['msg'];
+
+	$name=$_REQUEST['name'];
+	$email=$_REQUEST['email'];
+	$msg=$_REQUEST['msg'];
 	
-	$to='afni04fahtima@gmail.com';
-	$subject='Form Submission';
-	$message="Name: ".$name."\n". "Wrote the following : "."\n\n".$msg;
-	$headers="From: ".$email;
-	
-	if (mail($to, $subject, $message,$headers)){
-		echo "<h1>sent succesfully ! thank you"." .$name.", we will contact you shortly </h1>";
-	}
-	else{
-		echo"something went wrong";
-	}
-	
-	
+	if (empty($name) || empty($email) || empty($msg))
+	{echo "please fill all the fields";}
+else
+{ mail("afni04fahtima@gmail.com", "Webtech Message", $msg, "From : $name<$email>");
+ echo "<script>";
 }
-
-
 ?>
