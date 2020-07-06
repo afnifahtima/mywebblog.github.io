@@ -2,7 +2,6 @@
 if (isset($_POST['sumbit'])){
 	$name=$_POST['name'];
 	$email=$_POST['email'];
-
 	$msg=$_POST['msg'];
 	
 	$to='afni04fahtima@gmail.com';
@@ -10,8 +9,8 @@ if (isset($_POST['sumbit'])){
 	$message="Name: ".$name."\n". "Wrote the following : "."\n\n".$msg;
 	$headers="From: ".$email;
 	
-	if (mail($to, $subject, message,$header)){
-		echo "<h1>sent succesfully ! thank you"." .$name.", we will contact you shortly </h1>;
+	if (mail($to, $subject, $message,$headers)){
+		echo "<h1>sent succesfully ! thank you"." .$name.", we will contact you shortly </h1>";
 	}
 	else{
 		echo"something went wrong";
