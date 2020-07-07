@@ -12,7 +12,7 @@ if (isset($_POST['sumbit'])){
 
 
 	if(mail($to, $subject, $message, $headers)){
-	echo"<h1>sent Succesfully! Thank you"." ".$name.", We will contact you shortly!<h1>";
+	echo"<h1>sent Succesfully! Thank you"." ".$name.", We will contact you shortly!</h1>";
 }
 
 else{
