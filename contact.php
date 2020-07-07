@@ -1,18 +1,23 @@
 <?php
 if (isset($_POST['sumbit'])){
 	$name=$_POST['name'];
-	$subject=$_POST['subject'];
-	$mailFrom=$_POST['mail'];
-	$message=$_POST['message'];
+	$email=$_POST['email'];
+	$phone=$_POST['phone'];
+	$msg=$_POST['msg'];
 
-	$mailTo="afni04fahtima@gmail.com";
-	$headers="From: ".$emailFrom;
-	$txt = "You have received an e-mail from ".$name.".\n\n".$message;
+	$to='afni04fahtima@gmail.com';
+	$subject='Form Submission';
+	$message="Name: ".$name."\n"."phone: ".$phone."\n"."Wrote the following: "."\n\n".$msg;
+	$headers="From: ".$email;
 
-	mail($mailTo, $subject, $txt,$headers);
-	header("Location: contact.php?mailsend");
 
+	if(mail($to, $subject, $message, $headers)){
+	echo"<h1>sent Succesfully! Thank you"." ".$name.", We will contact you shortly!<h1>";
 }
 
+else{
+	echo "Something went wrong!";
+}
 
+}
 ?>
