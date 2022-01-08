@@ -86,6 +86,12 @@ nav ul li a:hover {
 	opacity: 0.7;
 }
 
+.hero .hero-text h2 {
+	color: black;
+	font-size: 45px;
+	text-align: center;
+}
+
 .hero .hero-text h3 {
 	color: white;
 	font-size: 20px;
